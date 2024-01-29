@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FloppyJump : MonoBehaviour
@@ -9,6 +7,8 @@ public class FloppyJump : MonoBehaviour
 
     public event Action OnJump;
 
+    public event Action OnJumpSong;
+
     [SerializeField]
     private float _strengtJump = 5f;
 
@@ -16,9 +16,11 @@ public class FloppyJump : MonoBehaviour
     {
         _floppy = this.GetComponent<Floppy>();
     }
+
     public void Jump()
     {
         OnJump?.Invoke();
+        OnJumpSong?.Invoke();
         _floppy.GetComponent<Rigidbody>().velocity = Vector2.up * this._strengtJump;
     }
 }

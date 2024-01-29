@@ -1,11 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeadZone : MonoBehaviour
 {
     public event Action OnDead;
+
+    public event Action OnDeadSong;
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -13,6 +13,7 @@ public class DeadZone : MonoBehaviour
         {
             Time.timeScale = 0;
             OnDead?.Invoke();
+            OnDeadSong?.Invoke();
         }
     }
 }
