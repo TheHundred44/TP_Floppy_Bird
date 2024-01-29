@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     private AudioClip m_hit;
     [SerializeField]
     private AudioClip m_score;
@@ -31,7 +29,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayHitSong()
     {
-        m_source.clip= m_hit;
+        m_source.clip = m_hit;
         m_source.Play();
     }
 
